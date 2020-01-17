@@ -12,9 +12,9 @@ pipeline {
             when {
                 branch 'master'
             }
-            step {
+            steps {
                 script {
-                    app = docker.build("aanshuman/train-schedule")
+                    app = docker.build("willbla/train-schedule")
                     app.inside {
                         sh 'echo $(curl localhost:8080)'
                     }
@@ -36,5 +36,3 @@ pipeline {
         }
     }
 }
-
-       
